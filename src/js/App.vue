@@ -16,6 +16,7 @@ export default {
 		<router-link to="/">Home</router-link>
 		<router-link to="/sobre">Sobre</router-link>
 		<router-link to="/contato">Contato</router-link>
+		<router-link to="/bitcoin">Preço do Bitcoin</router-link>
 
 		<hr/>
 
