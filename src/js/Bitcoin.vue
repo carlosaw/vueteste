@@ -1,36 +1,33 @@
 <template>
-	<div>
-		<h2>Bitcoin</h2><br/>
-		
-		Preço atual do Bitcoin:
+  <div>
+    <h2>Bitcoin</h2>
+    <br />
 
-        <div>US$: {{ bitcoin_price }}</div>
-	</div>
+    Preço atual do Bitcoin:
+
+    <div>US$: {{ bitcoin_price }}</div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-	data() {
-		return {
-            bitcoin_price:0
-		}
-	},
-	mounted() {
-        axios
-            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then(r => {
-
-                this.bitcoin_price = r.data.bpi.USD.rate_float;
-
-            });
-	}
-}
+  data() {
+    return {
+      bitcoin_price: 0,
+    };
+  },
+  mounted() {
+    axios.get("https://api.coindesk.com/v1/bpi/currentprice.json").then((r) => {
+      this.bitcoin_price = r.data.bpi.USD.rate_float;
+    });
+  },
+};
 </script>
 
 <style>
-	h2 {
-		color: #0000FF;
-	}
+h2 {
+  color: #0000ff;
+}
 </style>
